@@ -17,3 +17,14 @@ RUN git clone https://github.com/raspberrypi/userland.git
 WORKDIR /userland
 RUN ./buildme --aarch64
 RUN cp /userland/build/bin/* /usr/local/bin/
+
+# Preare textfile collector
+RUN mkdir -p /var/lib/node_exporter/textfile_collector
+ADD wrapper.sh /
+
+EXPOSE 9100
+
+CMD ["/wrapper.sh"]
+
+
+
