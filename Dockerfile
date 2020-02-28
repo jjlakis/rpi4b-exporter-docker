@@ -24,6 +24,8 @@ ADD wrapper.sh /
 
 EXPOSE 9100
 
+ENTRYPOINT ["/wrapper.sh"]
+
 CMD ["/wrapper.sh"]
 
 
