@@ -12,7 +12,7 @@ RUN mv "/tmp/raspberrypi_exporter-master/raspberrypi_exporter" "/usr/local/sbin/
 RUN chmod +x "/usr/local/sbin/raspberrypi_exporter"
 
 # Build userland
-RUN apt-get install -y cmake
+RUN apt-get install -y cmake gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 RUN git clone https://github.com/raspberrypi/userland.git
 WORKDIR /userland
 RUN ./buildme --aarch64
