@@ -3,4 +3,8 @@ Raspberry Pi 4B Node-exporter with vcgecmd metrics based on ubuntu docker image
 
 
 ## Run it
-docker run -v /dev:/dev -it --privileged <image-hash> bash
+docker build .
+docker run -d -v /dev:/dev --privileged --net=host <image-hash>
+
+## Try it
+curl localhost:9100/metrics
